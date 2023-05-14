@@ -4,7 +4,11 @@ import Image from "next/image";
 
 import Cover from "@/app/cover-bg.png";
 import MobilePub from "@/app/mobile-pub.png";
-import UserVerified from "@/app/user-virefied.png";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Biscato",
+};
 
 export default function Home() {
   return (

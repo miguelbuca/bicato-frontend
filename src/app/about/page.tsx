@@ -1,4 +1,9 @@
+import { Metadata } from "next";
 import { FaCogs } from "react-icons/fa";
+
+export const metadata: Metadata = {
+  title: "About",
+};
 
 export default function About() {
   return (

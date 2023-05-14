@@ -1,7 +1,11 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { useBetterState } from "@/hooks";
 
 export const useHeaderMutation = () => {
-  const activeLink = useBetterState<string>(window.location.pathname);
+  const pathname = usePathname();
+  const activeLink = useBetterState<string>(pathname);
   const menu: {
     name: string;
     url: string;

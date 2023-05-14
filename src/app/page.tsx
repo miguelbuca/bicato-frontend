@@ -8,16 +8,16 @@ import UserVerified from "@/app/user-virefied.png";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen">
-      <section className="relative before:absolute dark:bg-secondary top-[-64px] bg-secondary h-[33rem]">
+    <main className="flex flex-col min-h-screen overflow-x-hidden">
+      <section className="relative before:absolute dark:bg-secondary top-[-64px] bg-secondary xs:h-[33rem] ss:h-[25rem]">
         <div className="flex relative justify-center">
           <div className="flex flex-col pt-[64px] w-full max-w-screen-xl px-4 mx-auto h-[650px]">
-            <div className="flex flex-1 text-white justify-center flex-col max-w-[50%]">
-              <div className="text-8xl">
+            <div className="md:relative flex flex-1 text-white justify-center flex-col max-w-[50%] md:min-w-0 md:bottom-10 sm:absolute sm:z-10 sm:min-w-full sm:bottom-20 xs:absolute xs:z-10 xs:min-w-full xs:bottom-36 ss:absolute ss:z-10 ss:min-w-full ss:top-32 md:-top-10">
+              <div className="sm:text-8xl xs:text-6xl ss:text-6xl">
                 b<span className="text-primary">!</span>scato
               </div>
-              <div>
-                <p className="text-base italic my-[3rem]">
+              <div className="md:max-w-none xs:max-w-[90%] ss:max-w-[90%]">
+                <p className="md:text-base italic my-[3rem]  xs:text-sm ss:text-sm">
                   &quot; Não importa o trabalho que você precisa fazer, nós
                   temos um biscateiro perfeito para você. Baixe nosso aplicativo
                   de biscato agora e tenha acesso rápido a uma lista de
@@ -26,7 +26,7 @@ export default function Home() {
               </div>
               <StoreButtons />
             </div>
-            <div className="flex items-end h-[123px] max-w-[50%]">
+            <div className="flex ml:items-end h-[123px] ml:max-w-[50%] ml:bottom-0 xs:max-w-full xs:items-center xs:justify-center xs:absolute xs:w-full xs:bottom-[-128px] ss:max-w-full ss:items-center ss:justify-center ss:absolute ss:w-full ss:bottom-0">
               <Metrics
                 data={[
                   {
@@ -45,19 +45,16 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="absolute right-0 flex justify-end">
+          <div className="absolute right-0 flex justify-end sm:bottom-0 xs:bottom-[123px] ss:top-[64px]">
             <Image height={650} src={Cover} alt="cover-person" />
           </div>
         </div>
       </section>
-      <section className="relative flex gap-10 justify-center flex-row top-[64px] my-32 w-full max-w-screen-xl p-4 mx-auto">
+      <section className="relative flex gap-10 justify-center flex-row top-[64px] my-32 w-full max-w-screen-xl p-4 mx-auto sm:flex-col md:flex-row xs:flex-col ss:flex-col">
         <div>
-          <div>
+          <div className="flex  sm:items-center sm:justify-center xs:items-center xs:justify-center ss:items-center ss:justify-center">
             <Image
-              style={{
-                height: 600,
-                width: "auto",
-              }}
+              className="sm:h-[600px] w-auto ss:h-[500px]"
               src={MobilePub}
               alt="mobile-pub"
             />

@@ -11,7 +11,10 @@ const StoreButtons = () => {
           <span className="mr-1">
             <GrAppleAppStore size={25} />
           </span>
-          <span>AppStore ( iOS )</span>
+          <span className="flex flex-row">
+            AppStore{" "}
+            <span className="lg:flex xs:hidden ss:hidden">( iOS )</span>
+          </span>
         </button>
       </Link>
       <Link href={"/"}>
@@ -19,7 +22,10 @@ const StoreButtons = () => {
           <span className="mr-1">
             <IoLogoGooglePlaystore size={25} />
           </span>
-          <span>PlayStore ( Android )</span>
+          <span className="flex flex-row">
+            PlayStore{" "}
+            <span className="lg:flex xs:hidden ss:hidden">( Android )</span>
+          </span>
         </button>
       </Link>
     </div>

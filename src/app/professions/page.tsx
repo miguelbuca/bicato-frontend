@@ -1,7 +1,0 @@
-export default function Home() {
-  return (
-    <main className="flex flex-col min-h-screen">
-      <section className="min-h-[35rem]">professions</section>
-    </main>
-  );
-}

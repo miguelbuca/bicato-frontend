@@ -6,6 +6,7 @@ import { useHeaderMutation } from "./mutation";
 import Logo from "@/app/icon.svg";
 import Image from "next/image";
 import { FaSignInAlt } from "react-icons/fa";
+import { BiMenuAltRight } from "react-icons/bi";
 
 export const Header = () => {
   const { menu, activeLink, handlerLink } = useHeaderMutation();
@@ -14,10 +15,15 @@ export const Header = () => {
     <header className="h-[64px] sticky top-0 z-50 flex flex-col w-full antialiased backdrop-blur-sm backdrop-saturate-200 bg-white/50 dark:bg-black/50">
       <nav className="mb-[-1px] h-full flex items-center w-full max-w-screen-xl px-4 mx-auto">
         <div className="flex flex-row flex-1">
-          <div className="mr-16">
+          <div className="mr-16 md:flex-none sm:flex-none xs:flex-1 ss:flex-1">
             <Image src={Logo} alt="logo" />
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center  md:hidden sm:hidden xs:flex ss:flex">
+            <button>
+              <BiMenuAltRight size={35} />
+            </button>
+          </div>
+          <div className="flex items-center sm:flex xs:hidden ss:hidden">
             <ul className="flex flex-row">
               {menu.map(({ name, url }, index) => (
                 <li
@@ -29,7 +35,7 @@ export const Header = () => {
                     <span
                       className={`relative text-sm font-[500]  hover:opacity-100 transition-all ${
                         activeLink.value === url
-                          ? `text-primary before:flex-none before:absolute before:w-full before:h-[0.01rem] before:bottom-[-21px] mt-[21px] z-10 before:bg-primary bottom-0 opacity-100`
+                          ? `text-primary before:flex-none before:absolute before:w-full before:h-[0.01rem] before:bottom-[-22px] mt-[21px] z-10 before:bg-primary bottom-0 opacity-100`
                           : `dark:opacity-50 opacity-70`
                       }`}
                     >
@@ -42,7 +48,7 @@ export const Header = () => {
           </div>
         </div>
         <div>
-          <button className="flex gap-2 items-center justify-center text-white bg-secondary dark:bg-primary p-[.5rem_1.2rem] rounded-3xl">
+          <button className="flex gap-2 items-center justify-center text-white bg-secondary dark:bg-primary p-[.5rem_1.2rem] rounded-3xl sm:flex xs:hidden ss:hidden">
             <span>Entrar</span>
             <FaSignInAlt />
           </button>

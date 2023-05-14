@@ -1,7 +1,7 @@
 import { useBetterState } from "@/hooks";
 
 export const useHeaderMutation = () => {
-  const activeLink = useBetterState<string>("/");
+  const activeLink = useBetterState<string>(window.location.pathname);
   const menu: {
     name: string;
     url: string;
@@ -11,12 +11,16 @@ export const useHeaderMutation = () => {
       url: "/",
     },
     {
-      name: "Profissões",
-      url: "/professions",
+      name: "Como funciona",
+      url: "/how-it-works",
     },
     {
-      name: "Apoio ao cliente",
-      url: "./support",
+      name: "FAQ",
+      url: "/faq",
+    },
+    {
+      name: "Sobre",
+      url: "./about",
     },
   ];
 

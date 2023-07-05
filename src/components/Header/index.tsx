@@ -54,10 +54,12 @@ export const Header = () => {
             style={{
               left: toggleMenu.value ? "0" : "-100%",
             }}
-            className="hidden xs:flex ss:flex flex-col fixed bg-[rgba(0,0,0,0.3)] left-[-100%] transition-all top-0 w-[100%] z-[999] h-[100%]"
+            className="hidden xs:flex ss:flex flex-col fixed bg-[rgba(0,0,0,0.3)] left-[-100%] transition-all top-0 w-[100%] z-[999] h-[100vh]"
           >
-            <ul className="flex flex-1 flex-col bg-white dark:bg-black max-w-[50%] w-[300px] border-r border-r-[rgba(0,0,0,0.06)] dark:border-r-[rgba(255,255,255,0.06)]">
-              <li className="px-3 py-4">Menu</li>
+            <ul className="flex flex-1 flex-col bg-white h-[100%] dark:bg-black max-w-[50%] w-[300px] border-r border-r-[rgba(0,0,0,0.06)] dark:border-r-[rgba(255,255,255,0.06)]">
+              <li className="px-3 py-4">
+                <strong>Menu</strong>
+              </li>
               {menu.map(({ name, url }, index) => (
                 <li
                   className="px-3 py-4"

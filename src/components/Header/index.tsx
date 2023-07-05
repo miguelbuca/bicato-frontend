@@ -5,8 +5,7 @@ import { useHeaderMutation } from "./mutation";
 
 import Logo from "@/app/icon.svg";
 import Image from "next/image";
-import { FaSignInAlt } from "react-icons/fa";
-import { BiMenuAltRight } from "react-icons/bi";
+import { BiMenuAltRight, BiWorld } from "react-icons/bi";
 
 export const Header = () => {
   const { menu, activeLink, toggleMenu, handlerLink } = useHeaderMutation();
@@ -82,9 +81,9 @@ export const Header = () => {
                 </li>
               ))}
               <li className="flex justify-center items-end px-3 py-4">
-                <button className="flex gap-2 items-center justify-center text-white bg-secondary dark:bg-primary p-[.5rem_1.2rem] rounded-3xl sm:flex">
-                  <span>Entrar</span>
-                  <FaSignInAlt />
+                <button className="flex gap-2 text-white bg-secondary dark:bg-primary p-[.5rem_1.2rem] rounded-3xl sm:flex">
+                  <span>Português</span>
+                  <BiWorld />
                 </button>
               </li>
             </ul>
@@ -92,8 +91,8 @@ export const Header = () => {
         </div>
         <div>
           <button className="flex gap-2 items-center justify-center text-white bg-secondary dark:bg-primary p-[.5rem_1.2rem] rounded-3xl sm:flex xs:hidden ss:hidden">
-            <span>Entrar</span>
-            <FaSignInAlt />
+            <span>Português</span>
+            <BiWorld />
           </button>
         </div>
       </nav>

@@ -16,9 +16,9 @@ const Footer = () => {
             <div>
               <strong className="text-lg">Contatos</strong>
               <ul className="mt-4">
-                <li className="opacity-50 hover:opacity-100">
+                {/*<li className="opacity-50 hover:opacity-100">
                   <Link href={"tel:+244948000000"}>+244 948000000</Link>
-                </li>
+  </li>*/}
                 <li className="opacity-50 hover:opacity-100">
                   <Link href={"mailto:support@biscato.ao"}>
                     support@biscato.ao

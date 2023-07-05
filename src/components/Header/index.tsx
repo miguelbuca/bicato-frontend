@@ -81,7 +81,7 @@ export const Header = () => {
                   </Link>
                 </li>
               ))}
-              <li className="flex justify-center items-end flex-1 px-3 py-4">
+              <li className="flex justify-center items-end px-3 py-4">
                 <button className="flex gap-2 items-center justify-center text-white bg-secondary dark:bg-primary p-[.5rem_1.2rem] rounded-3xl sm:flex">
                   <span>Entrar</span>
                   <FaSignInAlt />

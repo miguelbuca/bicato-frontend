@@ -75,9 +75,11 @@ export default function Home() {
               <li className="mb-2">
                 - Encontrar de trabalhadores e empregadores
               </li>
-              <li className="mb-2">- Anúncios de trabalho</li>
+              <li className="mb-2">- Anúnciar de biscato</li>
               <li className="mb-2">- Avaliações e comentários</li>
               <li className="mb-2">- Suporte ao cliente</li>
+              <li className="mb-2">- Localizar biscatos pelo mapa</li>
+              <li className="mb-2">- Bate papo</li>
             </ul>
           </div>
         </div>

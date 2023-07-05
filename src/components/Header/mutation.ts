@@ -6,6 +6,7 @@ import { useBetterState } from "@/hooks";
 export const useHeaderMutation = () => {
   const pathname = usePathname();
   const activeLink = useBetterState<string>(pathname);
+  const toggleMenu = useBetterState<boolean>(false);
   const menu: {
     name: string;
     url: string;
@@ -34,5 +35,6 @@ export const useHeaderMutation = () => {
     menu,
     activeLink,
     handlerLink,
+    toggleMenu,
   };
 };

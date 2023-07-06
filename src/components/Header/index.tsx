@@ -55,7 +55,7 @@ export const Header = () => {
             }}
             className="hidden xs:flex ss:flex flex-col fixed bg-[rgba(0,0,0,0.3)] left-[-100%] transition-all top-0 w-[100%] z-[999] h-[100vh]"
           >
-            <ul className="flex flex-1 flex-col bg-white h-[100%] dark:bg-black max-w-[50%] w-[300px] border-r border-r-[rgba(0,0,0,0.06)] dark:border-r-[rgba(255,255,255,0.06)]">
+            <ul className="flex flex-1 flex-col bg-white h-[100%] dark:bg-black max-w-[50%] w-[50%] border-r border-r-[rgba(0,0,0,0.06)] dark:border-r-[rgba(255,255,255,0.06)]">
               <li className="px-3 py-4">
                 <strong>Menu</strong>
               </li>
@@ -80,7 +80,7 @@ export const Header = () => {
                   </Link>
                 </li>
               ))}
-              <li className="flex justify-center items-end px-3 py-4">
+              <li className="flex justify-start items-end px-3 py-4">
                 <button className="flex gap-2 text-white bg-secondary dark:bg-primary p-[.5rem_1.2rem] rounded-3xl sm:flex">
                   <span>Português</span>
                   <BiWorld />

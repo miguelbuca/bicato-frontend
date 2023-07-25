@@ -5,12 +5,47 @@ import Image from "next/image";
 import Cover from "@/app/cover-bg.png";
 import MobilePub from "@/app/mobile-pub.png";
 import { Metadata } from "next";
+import axios from "axios";
+import Marquee from "react-fast-marquee";
+
+import Asterisk from "@/assets/img/asterisk-blue.a72371dc.svg";
 
 export const metadata: Metadata = {
   title: "Biscato",
 };
 
-export default function Home() {
+export interface Profession {
+  name: string;
+  _count: {
+    skills: number;
+    works: number;
+  };
+}
+
+export interface Website {
+  userCount: number;
+  workCount: number;
+  skillTypeCount: number;
+  professions: Profession[];
+}
+
+export default async function Home() {
+  const { data } = await axios.get<Website>(`${process.env.API_HOST}/website`);
+
+  const formatNumber = (value: number) => {
+    if (typeof value !== "number" || isNaN(value)) {
+      throw new Error("Invalid input. Value must be a number.");
+    }
+
+    if (value >= 1000000) {
+      return `${Math.floor(value / 1000000)}M`;
+    } else if (value >= 1000) {
+      return ` ${Math.floor(value / 1000)}K`;
+    } else {
+      return `${value.toString().length < 2 ? '0'+value : value}`;
+    }
+  };
+
   return (
     <main className="flex flex-col min-h-screen overflow-x-hidden">
       <section className="relative before:absolute dark:bg-secondary top-[-64px] bg-secondary xs:h-[33rem] ss:h-[25rem]">
@@ -35,15 +70,15 @@ export default function Home() {
                 data={[
                   {
                     name: "Trabalhos",
-                    value: "2.7M",
+                    value: formatNumber(data.workCount),
                   },
                   {
                     name: "Biscateiros",
-                    value: "782.7",
+                    value: formatNumber(data.userCount),
                   },
                   {
                     name: "Profissões",
-                    value: "15K",
+                    value: formatNumber(data.skillTypeCount),
                   },
                 ]}
               />
@@ -83,6 +118,22 @@ export default function Home() {
             </ul>
           </div>
         </div>
+      </section>
+      <section className="h-[100px] bg-[rgba(0,0,0,0.04)] flex justify-between items-center dark:bg-[rgba(255,255,255,0.04)]">
+        <Marquee>
+          {data.professions.map(({ name }, index) => (
+            <div className="flex items-center font-semibold" key={index}>
+              <span className="font-[10pt]">{name}</span>
+              <Image
+                className="mx-10"
+                src={Asterisk.src}
+                width={30}
+                height={30}
+                alt={"asterisk"}
+              />
+            </div>
+          ))}
+        </Marquee>
       </section>
     </main>
   );

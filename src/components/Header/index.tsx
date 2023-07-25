@@ -34,7 +34,7 @@ export const Header = () => {
                     <span
                       className={`relative text-sm font-[500]  hover:opacity-100 transition-all ${
                         activeLink.value === url
-                          ? `text-primary before:flex-none before:absolute before:w-full before:h-[0.01rem] before:bottom-[-22px] mt-[21px] z-10 before:bg-primary bottom-0 opacity-100`
+                          ? `text-primary before:flex-none before:absolute before:w-full before:h-[0.1rem] before:bottom-[-24px] mt-[21px] z-10 before:bg-primary bottom-0 opacity-100`
                           : `dark:opacity-50 opacity-70`
                       }`}
                     >
